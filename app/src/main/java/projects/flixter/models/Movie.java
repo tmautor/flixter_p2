@@ -3,10 +3,12 @@ package projects.flixter.models;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Parcel
 public class Movie
 {
     static String image_prefix = "https://image.tmdb.org/t/p/w342/%s";
@@ -25,6 +27,9 @@ public class Movie
     boolean video;
     double vote_average;
     int vote_count;
+
+    //empty constructor needed for Parceler library
+    public Movie(){}
 
     public Movie(JSONObject j) throws JSONException
     {
